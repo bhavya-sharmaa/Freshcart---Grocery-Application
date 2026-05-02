@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FreshCart – Shop Fresh</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="fc-nav">
+  <div class="nav-brand">
+    <img src="static/logo.png" class="nav-logo-img">
+    <span class="brand-name">FreshCart</span>
+  </div>
+  <div class="nav-search-wrap">
+    <span class="search-icon">🔍</span>
+    <input id="search" class="nav-search" placeholder="Search vegetables, fruits, snacks…" onkeyup="renderAll()">
+  </div>
+  <div class="nav-actions">
+    <div class="dropdown">
+      <button class="fc-btn fc-btn-ghost dropdown-toggle" data-bs-toggle="dropdown">☰ Menu</button>
+      <ul class="dropdown-menu dropdown-menu-end fc-dropdown">
+        <li><a class="dropdown-item" href="#dairy">🥛 Dairy & Eggs</a></li>
+        <li><a class="dropdown-item" href="#fruits">🍎 Fruits</a></li>
+        <li><a class="dropdown-item" href="#vegetables">🥦 Vegetables</a></li>
+        <li><a class="dropdown-item" href="#snacks">🍿 Snacks</a></li>
+        <li><a class="dropdown-item" href="#choco">🍫 Chocolates</a></li>
+        <li><a class="dropdown-item" href="#juices">🧃 Juices & Drinks</a></li>
+        <li><a class="dropdown-item" href="#icecream">🍦 Ice Creams</a></li>
+        <li><a class="dropdown-item" href="#teacoffee">☕ Tea & Coffee</a></li>
+        <li><a class="dropdown-item" href="#sauces">🫙 Sauces & Spreads</a></li>
+        <li><a class="dropdown-item" href="#meat">🍗 Chicken, Meat & Fish</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item text-danger" onclick="logout()">🚪 Logout</a></li>
+      </ul>
+    </div>
+    <button class="fc-btn fc-btn-cart" onclick="location.href='cart.html'">
+      🛒 Cart <span class="cart-badge" id="cartCount">0</span>
+    </button>
+  </div>
+</nav>
+
+<!-- OFFER CAROUSEL -->
+<section class="carousel-section">
+  <div class="offer-carousel" id="offerCarousel">
+    <div class="offer-slide" style="background:linear-gradient(135deg,#1a7a4a,#2ecc71);">
+      <img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=400&q=80" class="offer-img" alt="Fruits">
+      <div class="offer-text">
+        <span class="offer-tag">LIMITED TIME</span>
+        <h3>Buy 2 Get 1 Free</h3>
+        <p>On all fresh fruits today</p>
+        <button class="offer-cta" onclick="document.getElementById('fruits').scrollIntoView({behavior:'smooth'})">Shop Fruits →</button>
+      </div>
+    </div>
+    <div class="offer-slide" style="background:linear-gradient(135deg,#b5451b,#f0853c);">
+      <img src="https://images.unsplash.com/photo-1518977956812-cd3dbadaaf31?w=400&q=80" class="offer-img" alt="Potatoes">
+      <div class="offer-text">
+        <span class="offer-tag">SUPER SAVER</span>
+        <h3>Onion ₹20 / kg</h3>
+        <p>Fresh from farm. Limited stock!</p>
+        <button class="offer-cta" onclick="document.getElementById('vegetables').scrollIntoView({behavior:'smooth'})">Shop Veggies →</button>
+      </div>
+    </div>
+    <div class="offer-slide" style="background:linear-gradient(135deg,#185a9d,#43cea2);">
+      <img src="https://images.unsplash.com/photo-1563636619-e9143da7973b?w=400&q=80" class="offer-img" alt="Milk">
+      <div class="offer-text">
+        <span class="offer-tag">DAIRY DEAL</span>
+        <h3>Dairy Bonanza 🥛</h3>
+        <p>Paneer, Ghee & Milk – Up to 20% off</p>
+        <button class="offer-cta" onclick="document.getElementById('dairy').scrollIntoView({behavior:'smooth'})">Shop Dairy →</button>
+      </div>
+    </div>
+    <div class="offer-slide" style="background:linear-gradient(135deg,#7b4f12,#f4c430);">
+      <img src="https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=400&q=80" class="offer-img" alt="Chocolates">
+      <div class="offer-text">
+        <span class="offer-tag">SWEET TREAT</span>
+        <h3>₹100 OFF on Chocolates</h3>
+        <p>Use code: <b>CHOCO100</b> at checkout</p>
+        <button class="offer-cta" onclick="document.getElementById('choco').scrollIntoView({behavior:'smooth'})">Shop Chocolates →</button>
+      </div>
+    </div>
+    <div class="offer-slide" style="background:linear-gradient(135deg,#6a1172,#e040fb);">
+      <img src="https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?w=400&q=80" class="offer-img" alt="Mango">
+      <div class="offer-text">
+        <span class="offer-tag">SEASONAL</span>
+        <h3>Mango Mania! 🥭</h3>
+        <p>Premium Alphonso – Free delivery</p>
+        <button class="offer-cta" onclick="document.getElementById('fruits').scrollIntoView({behavior:'smooth'})">Shop Mangoes →</button>
+      </div>
+    </div>
+    <div class="offer-slide" style="background:linear-gradient(135deg,#c0392b,#e74c3c);">
+      <img src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=400&q=80" class="offer-img" alt="Snacks">
+      <div class="offer-text">
+        <span class="offer-tag">CRUNCH TIME</span>
+        <h3>Snacks Fiesta 🍿</h3>
+        <p>Pringles, Doritos & more — 15% off</p>
+        <button class="offer-cta" onclick="document.getElementById('snacks').scrollIntoView({behavior:'smooth'})">Shop Snacks →</button>
+    </div>
+    </div>
+    <div class="offer-slide" style="background:linear-gradient(135deg,#0f4c75,#1b6ca8);">
+      <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=400&q=80" class="offer-img" alt="Juices">
+      <div class="offer-text">
+        <span class="offer-tag">REFRESHING</span>
+        <h3>Juices & Drinks 🧃</h3>
+        <p>Fresh, packed & cold — up to 15% off</p>
+        <button class="offer-cta" onclick="document.getElementById('juices').scrollIntoView({behavior:'smooth'})">Shop Juices →</button>
+      </div>
+      </div>
+    </div>
+  </div>
+  <!-- Dots -->
+  <div class="carousel-dots" id="carouselDots"></div>
+  <!-- Arrows -->
+  <button class="carousel-arrow left" onclick="shiftSlide(-1)">‹</button>
+  <button class="carousel-arrow right" onclick="shiftSlide(1)">›</button>
+</section>
+
+<!-- CATEGORY PILLS -->
+<div class="cat-pills" id="catPills">
+  <a class="cat-pill active" href="#dairy" onclick="setActive(this)">🥛 Dairy</a>
+  <a class="cat-pill" href="#fruits" onclick="setActive(this)">🍎 Fruits</a>
+  <a class="cat-pill" href="#vegetables" onclick="setActive(this)">🥦 Veggies</a>
+  <a class="cat-pill" href="#snacks" onclick="setActive(this)">🍿 Snacks</a>
+  <a class="cat-pill" href="#choco" onclick="setActive(this)">🍫 Chocolates</a>
+  <a class="cat-pill" href="#juices" onclick="setActive(this)">🧃 Juices</a>
+  <a class="cat-pill" href="#icecream" onclick="setActive(this)">🍦 Ice Creams</a>
+  <a class="cat-pill" href="#teacoffee" onclick="setActive(this)">☕ Tea &amp; Coffee</a>
+  <a class="cat-pill" href="#sauces" onclick="setActive(this)">🫙 Sauces</a>
+  <a class="cat-pill" href="#meat" onclick="setActive(this)">🍗 Meat &amp; Fish</a>
+</div>
+
+<!-- PRODUCTS -->
+<div class="fc-container">
+
+  <div class="section-header" id="dairy">
+    <div class="section-icon">🥛</div>
+    <div>
+      <h2 class="section-title">Dairy, Bread & Eggs</h2>
+      <p class="section-sub">Fresh every morning</p>
+    </div>
+  </div>
+  <div class="fc-grid" id="dairyBox"></div>
+
+  <div class="section-header" id="fruits">
+    <div class="section-icon">🍎</div>
+    <div>
+      <h2 class="section-title">Fresh Fruits</h2>
+      <p class="section-sub">Seasonal picks, farm to door</p>
+    </div>
+  </div>
+  <div class="fc-grid" id="fruitsBox"></div>
+
+  <div class="section-header" id="vegetables">
+    <div class="section-icon">🥦</div>
+    <div>
+      <h2 class="section-title">Vegetables</h2>
+      <p class="section-sub">Crisp, local & organic</p>
+    </div>
+  </div>
+  <div class="fc-grid" id="vegBox"></div>
+
+  <div class="section-header" id="snacks">
+    <div class="section-icon">🍿</div>
+    <div>
+      <h2 class="section-title">Snacks</h2>
+      <p class="section-sub">Your cravings, sorted</p>
+    </div>
+  </div>
+  <div class="fc-grid" id="snackBox"></div>
+
+  <div class="section-header" id="choco">
+    <div class="section-icon">🍫</div>
+    <div>
+      <h2 class="section-title">Chocolates</h2>
+      <p class="section-sub">Sweet little indulgences</p>
+    </div>
+  </div>
+  <div class="fc-grid" id="chocoBox"></div>
+
+  <div class="section-header" id="juices">
+    <div class="section-icon">🧃</div>
+    <div>
+      <h2 class="section-title">Juices & Drinks</h2>
+      <p class="section-sub">Fresh, packed & flavoured drinks</p>
+    </div>
+  </div>
+  <div class="fc-grid" id="juicesBox"></div>
+
+  <div class="section-header" id="icecream">
+    <div class="section-icon">🍦</div>
+    <div>
+      <h2 class="section-title">Ice Creams</h2>
+      <p class="section-sub">Cool treats for every mood</p>
+    </div>
+  </div>
+  <div class="fc-grid" id="icecreamBox"></div>
+
+  <div class="section-header" id="teacoffee">
+    <div class="section-icon">☕</div>
+    <div>
+      <h2 class="section-title">Tea & Coffee</h2>
+      <p class="section-sub">Brew the perfect cup</p>
+    </div>
+  </div>
+  <div class="fc-grid" id="teacoffeeBox"></div>
+
+  <div class="section-header" id="sauces">
+    <div class="section-icon">🫙</div>
+    <div>
+      <h2 class="section-title">Sauces & Spreads</h2>
+      <p class="section-sub">Top it off with flavour</p>
+    </div>
+  </div>
+  <div class="fc-grid" id="saucesBox"></div>
+
+  <div class="section-header" id="meat">
+    <div class="section-icon">🍗</div>
+    <div>
+      <h2 class="section-title">Chicken, Meat & Fish</h2>
+      <p class="section-sub">Fresh cuts, home delivered</p>
+    </div>
+  </div>
+  <div class="fc-grid" id="meatBox"></div>
+
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="fc-modal-overlay" onclick="closeModalOutside(event)">
+  <div class="fc-modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-img-wrap">
+      <img id="mImg" src="" alt="" class="modal-img">
+    </div>
+    <div class="modal-body">
+      <span class="modal-cat" id="mCat"></span>
+      <h3 id="mName" class="modal-name"></h3>
+      <p class="modal-desc" id="mDesc">Farm-fresh and quality-checked. Delivered to your doorstep within hours of harvest.</p>
+      <div class="modal-price-row">
+        <span id="mPrice" class="modal-price"></span>
+        <span class="modal-unit">per unit</span>
+      </div>
+      <div class="qty-control">
+        <button class="qty-btn" onclick="modalQty(-1)">−</button>
+        <span id="mQty" class="qty-val">1</span>
+        <button class="qty-btn" onclick="modalQty(1)">+</button>
+      </div>
+      <button class="fc-btn fc-btn-add" onclick="addFromModal()">Add to Cart 🛒</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast" class="fc-toast"></div>
+
+<script src="app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// Carousel logic
+const totalSlides = 7;
+let currentSlide = 0;
+let autoTimer;
+
+const dots = document.getElementById('carouselDots');
+for(let i=0;i<totalSlides;i++){
+  const d = document.createElement('button');
+  d.className = 'dot' + (i===0?' active':'');
+  d.onclick = ()=>goSlide(i);
+  dots.appendChild(d);
+}
+
+function goSlide(n){
+  currentSlide = (n + totalSlides) % totalSlides;
+  document.getElementById('offerCarousel').style.transform = `translateX(-${currentSlide * 100}%)`;
+  document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===currentSlide));
+}
+function shiftSlide(dir){ goSlide(currentSlide+dir); resetAuto(); }
+function resetAuto(){ clearInterval(autoTimer); autoTimer = setInterval(()=>goSlide(currentSlide+1), 4000); }
+resetAuto();
+
+function scrollTo(id){ document.querySelector(id).scrollIntoView({behavior:'smooth'}); }
+function closeModalOutside(e){ if(e.target.id==='modal') closeModal(); }
+</script>
+
+<script>
+// Pill active state on click
+function setActive(el){
+  document.querySelectorAll('.cat-pill').forEach(p=>p.classList.remove('active'));
+  el.classList.add('active');
+}
+
+// Scroll spy — highlight pill as user scrolls
+const sections = ['dairy','fruits','vegetables','snacks','choco','juices','icecream','teacoffee','sauces','meat'];
+const pillMap = {};
+sections.forEach(id=>{
+  const el = document.getElementById(id);
+  const pill = document.querySelector(`.cat-pill[href="#${id}"]`);
+  if(el && pill) pillMap[id]={el,pill};
+});
+window.addEventListener('scroll',()=>{
+  let current = sections[0];
+  sections.forEach(id=>{
+    const sec = pillMap[id]?.el;
+    if(sec && sec.getBoundingClientRect().top <= 160) current = id;
+  });
+  document.querySelectorAll('.cat-pill').forEach(p=>p.classList.remove('active'));
+  if(pillMap[current]?.pill) pillMap[current].pill.classList.add('active');
+  // scroll active pill into view in the pill bar
+  const activePill = pillMap[current]?.pill;
+  if(activePill){
+    activePill.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
+  }
+},{passive:true});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,490 @@
+/* ===== RESET & BASE ===== */
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --green:#1a7a4a;
+  --green-mid:#27ae60;
+  --green-light:#d6f5e3;
+  --green-glow:rgba(39,174,96,0.18);
+  --accent:#f4c430;
+  --text:#111827;
+  --text-muted:#6b7280;
+  --bg:#f0fdf4;
+  --card-bg:#ffffff;
+  --radius:18px;
+  --radius-sm:12px;
+  --shadow:0 4px 24px rgba(0,0,0,0.07);
+  --shadow-hover:0 12px 36px rgba(0,0,0,0.12);
+}
+
+/* ===== FOOD DOODLE BACKGROUND ===== */
+body{
+  font-family:'DM Sans',sans-serif;
+  color:var(--text);
+  min-height:100vh;
+  background-color:#f0fdf4;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='900'%3E%3C!-- Pizza slice --%3E%3Cg transform='translate(60,60)' opacity='0.06'%3E%3Cpath d='M0,0 L60,120 L-60,120 Z' fill='none' stroke='%231a7a4a' stroke-width='3' stroke-linejoin='round'/%3E%3Ccircle cx='-15' cy='80' r='6' fill='%231a7a4a'/%3E%3Ccircle cx='20' cy='95' r='5' fill='%231a7a4a'/%3E%3Ccircle cx='0' cy='60' r='4' fill='%231a7a4a'/%3E%3C/g%3E%3C!-- Coffee cup --%3E%3Cg transform='translate(200,40)' opacity='0.06'%3E%3Crect x='-20' y='10' width='40' height='35' rx='5' fill='none' stroke='%231a7a4a' stroke-width='3'/%3E%3Cpath d='M20,20 Q35,20 35,32 Q35,44 20,44' fill='none' stroke='%231a7a4a' stroke-width='3'/%3E%3Cpath d='-5,-12 Q0,-22 5,-12' fill='none' stroke='%231a7a4a' stroke-width='2.5' stroke-linecap='round'/%3E%3Cline x1='-20' y1='10' x2='20' y2='10' stroke='%231a7a4a' stroke-width='2.5'/%3E%3C/g%3E%3C!-- Apple --%3E%3Cg transform='translate(380,55)' opacity='0.06'%3E%3Cpath d='M0,15 Q-35,10 -35,45 Q-35,75 0,80 Q35,75 35,45 Q35,10 0,15' fill='none' stroke='%231a7a4a' stroke-width='3'/%3E%3Cpath d='M0,15 Q5,-5 15,-8' fill='none' stroke='%231a7a4a' stroke-width='2.5' stroke-linecap='round'/%3E%3Cpath d='M0,15 Q-8,0 -5,-10' fill='none' stroke='%231a7a4a' stroke-width='2' stroke-linecap='round'/%3E%3C/g%3E%3C!-- Ice cream --%3E%3Cg transform='translate(560,50)' opacity='0.06'%3E%3Ccircle cx='0' cy='0' r='28' fill='none' stroke='%231a7a4a' stroke-width='3'/%3E%3Cpath d='M-28,0 L-12,70 L12,70 L28,0' fill='none' stroke='%231a7a4a' stroke-width='3' stroke-linejoin='round'/%3E%3Cpath d='-20,20 Q0,35 20,20' fill='none' stroke='%231a7a4a' stroke-width='2'/%3E%3C/g%3E%3C!-- Carrot --%3E%3Cg transform='translate(740,45) rotate(-30)' opacity='0.06'%3E%3Cpath d='M0,-50 Q15,0 0,50 Q-15,0 0,-50' fill='none' stroke='%231a7a4a' stroke-width='3'/%3E%3Cpath d='M0,-50 Q-15,-65 -5,-75' fill='none' stroke='%231a7a4a' stroke-width='2.5' stroke-linecap='round'/%3E%3Cpath d='M0,-50 Q5,-68 0,-78' fill='none' stroke='%231a7a4a' stroke-width='2.5' stroke-linecap='round'/%3E%3Cpath d='M0,-50 Q15,-65 5,-75' fill='none' stroke='%231a7a4a' stroke-width='2.5' stroke-linecap='round'/%3E%3C/g%3E%3C!-- Burger --%3E%3Cg transform='translate(870,70)' opacity='0.06'%3E%3Cellipse cx='0' cy='-20' rx='38' ry='18' fill='none' stroke='%231a7a4a' stroke-width='3'/%3E%3Crect x='-38' y='-5' width='76' height='12' rx='4' fill='none' stroke='%231a7a4a' stroke-width='2.5'/%3E%3Crect x='-38' y='7' width='76' height='10' rx='4' fill='none' stroke='%231a7a4a' stroke-width='2.5'/%3E%3Crect x='-38' y='17' width='76' height='12' rx='4' fill='none' stroke='%231a7a4a' stroke-width='2.5'/%3E%3C/g%3E%3C!-- Row 2 --%3E%3C!-- Strawberry --%3E%3Cg transform='translate(30,250)' opacity='0.06'%3E%3Cpath d='M0,-35 Q35,0 25,35 Q10,55 0,55 Q-10,55 -25,35 Q-35,0 0,-35' fill='none' stroke='%231a7a4a' stroke-width='3'/%3E%3Cpath d='M0,-35 Q-10,-50 -5,-60' fill='none' stroke='%231a7a4a' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M0,-35 Q5,-52 0,-62' fill='none' stroke='%231a7a4a' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='-10' cy='10' r='3' fill='%231a7a4a'/%3E%3Ccircle cx='12' cy='5' r='3' fill='%231a7a4a'/%3E%3Ccircle cx='5' cy='30' r='3' fill='%231a7a4a'/%3E%3Ccircle cx='-8' cy='38' r='3' fill='%231a7a4a'/%3E%3C/g%3E%3C!-- Milk bottle --%3E%3Cg transform='translate(155,230)' opacity='0.06'%3E%3Cpath d='M-15,-60 L-20,-30 Q-30,-10 -30,20 L-30,60 Q-30,70 -20,70 L20,70 Q30,70 30,60 L30,20 Q30,-10 20,-30 L15,-60 Z' fill='none' stroke='%231a7a4a' stroke-width='3'/%3E%3Crect x='-10' y='-70' width='20' height='15' rx='4' fill='none' stroke='%231a7a4a' stroke-width='2.5'/%3E%3Cpath d='M-25,20 Q0,35 25,20' fill='none' stroke='%231a7a4a' stroke-width='2'/%3E%3C/g%3E%3C!-- Donut --%3E%3Cg transform='translate(320,240)' opacity='0.06'%3E%3Ccircle cx='0' cy='0' r='45' fill='none' stroke='%231a7a4a' stroke-width='3'/%3E%3Ccircle cx='0' cy='0' r='18' fill='none' stroke='%231a7a4a' stroke-width='3'/%3E%3Ccircle cx='25' cy='-30' r='4' fill='%231a7a4a'/%3E%3Ccircle cx='-30' cy='-20' r='3' fill='%231a7a4a'/%3E%3Ccircle cx='35' cy='15' r='3' fill='%231a7a4a'/%3E%3Ccircle cx='-10' cy='38' r='4' fill='%231a7a4a'/%3E%3C/g%3E%3C!-- Juice glass --%3E%3Cg transform='translate(480,235)' opacity='0.06'%3E%3Cpath d='M-25,-50 L-30,60 L30,60 L25,-50 Z' fill='none' stroke='%231a7a4a' stroke-width='3'/%3E%3Cline x1='-25' y1='-50' x2='25' y2='-50' stroke='%231a7a4a' stroke-width='2.5'/%3E%3Cpath d='M-25,10 Q0,25 25,10' fill='none' stroke='%231a7a4a' stroke-width='2'/%3E%3Cline x1='25' y1='-50' x2='50' y2='-75' stroke='%231a7a4a' stroke-width='2.5' stroke-linecap='round'/%3E%3C/g%3E%3C!-- Broccoli --%3E%3Cg transform='translate(630,245)' opacity='0.06'%3E%3Cline x1='0' y1='30' x2='0' y2='80' stroke='%231a7a4a' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M0,30 Q-20,10 -35,-10 Q-20,-35 0,-30 Q20,-35 35,-10 Q20,10 0,30' fill='none' stroke='%231a7a4a' stroke-width='3'/%3E%3Ccircle cx='-20' cy='-20' r='18' fill='none' stroke='%231a7a4a' stroke-width='2.5'/%3E%3Ccircle cx='20' cy='-20' r='18' fill='none' stroke='%231a7a4a' stroke-width='2.5'/%3E%3Ccircle cx='0' cy='-38' r='18' fill='none' stroke='%231a7a4a' stroke-width='2.5'/%3E%3C/g%3E%3C!-- Fish --%3E%3Cg transform='translate(800,250)' opacity='0.06'%3E%3Cpath d='M-60,0 Q-20,-35 30,-20 Q60,0 30,20 Q-20,35 -60,0' fill='none' stroke='%231a7a4a' stroke-width='3'/%3E%3Cpath d='M-60,0 Q-85,-30 -80,-50 Q-60,-20 -60,0 Q-60,20 -80,50 Q-85,30 -60,0' fill='none' stroke='%231a7a4a' stroke-width='3'/%3E%3Ccircle cx='20' cy='-8' r='5' fill='%231a7a4a'/%3E%3C/g%3E%3C!-- Row 3 --%3E%3C!-- Cupcake --%3E%3Cg transform='translate(60,470)' opacity='0.05'%3E%3Cpath d='M-30,20 Q-35,70 -25,70 L25,70 Q35,70 30,20 Z' fill='none' stroke='%231a7a4a' stroke-width='3'/%3E%3Cpath d='M-30,20 Q-20,-30 0,-30 Q20,-30 30,20' fill='none' stroke='%231a7a4a' stroke-width='3'/%3E%3Cpath d='M0,-30 Q-10,-55 0,-65 Q10,-55 0,-30' fill='none' stroke='%231a7a4a' stroke-width='2.5'/%3E%3Ccircle cx='0' cy='-68' r='5' fill='%231a7a4a'/%3E%3C/g%3E%3C!-- Watermelon --%3E%3Cg transform='translate(220,460)' opacity='0.05'%3E%3Cpath d='M-55,0 Q-55,-60 0,-60 Q55,-60 55,0 Z' fill='none' stroke='%231a7a4a' stroke-width='3'/%3E%3Cpath d='M-50,0 Q-48,-50 0,-50 Q48,-50 50,0' fill='none' stroke='%231a7a4a' stroke-width='2' stroke-dasharray='6,4'/%3E%3Ccircle cx='-20' cy='-25' r='4' fill='%231a7a4a'/%3E%3Ccircle cx='15' cy='-30' r='4' fill='%231a7a4a'/%3E%3Ccircle cx='0' cy='-10' r='4' fill='%231a7a4a'/%3E%3C/g%3E%3C!-- Egg --%3E%3Cg transform='translate(390,465)' opacity='0.05'%3E%3Cpath d='M0,-50 Q35,-40 35,10 Q35,55 0,55 Q-35,55 -35,10 Q-35,-40 0,-50' fill='none' stroke='%231a7a4a' stroke-width='3'/%3E%3C/g%3E%3C!-- Hotdog --%3E%3Cg transform='translate(540,470)' opacity='0.05'%3E%3Crect x='-55' y='-18' width='110' height='36' rx='18' fill='none' stroke='%231a7a4a' stroke-width='3'/%3E%3Crect x='-45' y='-10' width='90' height='20' rx='10' fill='none' stroke='%231a7a4a' stroke-width='2.5'/%3E%3Cpath d='M-35,-10 Q-20,-25 -5,-10 Q10,-25 25,-10 Q40,-25 55,-10' fill='none' stroke='%231a7a4a' stroke-width='2' stroke-linecap='round'/%3E%3C/g%3E%3C!-- Lemon --%3E%3Cg transform='translate(710,465)' opacity='0.05'%3E%3Cellipse cx='0' cy='0' rx='42' ry='32' fill='none' stroke='%231a7a4a' stroke-width='3'/%3E%3Cpath d='M0,-32 Q-8,-45 -5,-55' fill='none' stroke='%231a7a4a' stroke-width='2.5' stroke-linecap='round'/%3E%3Cpath d='M-42,0 L42,0' stroke='%231a7a4a' stroke-width='2' stroke-dasharray='5,4'/%3E%3Cpath d='M0,-32 L0,32' stroke='%231a7a4a' stroke-width='2' stroke-dasharray='5,4'/%3E%3C/g%3E%3C!-- Cheese --%3E%3Cg transform='translate(855,470)' opacity='0.05'%3E%3Cpath d='M-55,30 L-55,-10 L0,-40 L55,-10 L55,30 Z' fill='none' stroke='%231a7a4a' stroke-width='3' stroke-linejoin='round'/%3E%3Ccircle cx='-20' cy='5' r='9' fill='none' stroke='%231a7a4a' stroke-width='2.5'/%3E%3Ccircle cx='25' cy='15' r='7' fill='none' stroke='%231a7a4a' stroke-width='2.5'/%3E%3C/g%3E%3C!-- Row 4 --%3E%3C!-- Chicken leg --%3E%3Cg transform='translate(80,680) rotate(30)' opacity='0.05'%3E%3Cpath d='M0,-60 Q25,-40 25,0 Q25,40 10,60 Q0,70 -10,60 Q-25,40 -25,0 Q-25,-40 0,-60' fill='none' stroke='%231a7a4a' stroke-width='3'/%3E%3Cline x1='0' y1='60' x2='0' y2='95' stroke='%231a7a4a' stroke-width='5' stroke-linecap='round'/%3E%3C/g%3E%3C!-- Pineapple --%3E%3Cg transform='translate(250,670)' opacity='0.05'%3E%3Cellipse cx='0' cy='20' rx='35' ry='50' fill='none' stroke='%231a7a4a' stroke-width='3'/%3E%3Cpath d='M-20,-30 Q-10,-70 0,-80 Q10,-70 20,-30' fill='none' stroke='%231a7a4a' stroke-width='2.5' stroke-linecap='round'/%3E%3Cpath d='M-35,20 L35,20' stroke='%231a7a4a' stroke-width='1.5' stroke-dasharray='5,5'/%3E%3Cpath d='M0,-30 L0,70' stroke='%231a7a4a' stroke-width='1.5' stroke-dasharray='5,5'/%3E%3Cpath d='M-30,0 L30,40' stroke='%231a7a4a' stroke-width='1.5' stroke-dasharray='5,5'/%3E%3Cpath d='M30,0 L-30,40' stroke='%231a7a4a' stroke-width='1.5' stroke-dasharray='5,5'/%3E%3C/g%3E%3C!-- Noodle bowl --%3E%3Cg transform='translate(430,675)' opacity='0.05'%3E%3Cellipse cx='0' cy='30' rx='55' ry='20' fill='none' stroke='%231a7a4a' stroke-width='3'/%3E%3Cpath d='M-55,30 Q-60,-10 0,-20 Q60,-10 55,30' fill='none' stroke='%231a7a4a' stroke-width='3'/%3E%3Cpath d='M-30,-20 Q-20,-40 -10,-20 Q0,-40 10,-20 Q20,-40 30,-20' fill='none' stroke='%231a7a4a' stroke-width='2.5' stroke-linecap='round'/%3E%3Cline x1='5' y1='-40' x2='10' y2='-70' stroke='%231a7a4a' stroke-width='2.5' stroke-linecap='round'/%3E%3Cline x1='20' y1='-35' x2='30' y2='-65' stroke='%231a7a4a' stroke-width='2.5' stroke-linecap='round'/%3E%3C/g%3E%3C!-- Banana --%3E%3Cg transform='translate(615,680)' opacity='0.05'%3E%3Cpath d='M-40,30 Q-50,-20 -20,-50 Q20,-70 50,-40 Q60,-10 40,30 Q20,55 -40,30' fill='none' stroke='%231a7a4a' stroke-width='3'/%3E%3Cpath d='M50,-40 Q60,-50 55,-60' fill='none' stroke='%231a7a4a' stroke-width='2.5' stroke-linecap='round'/%3E%3C/g%3E%3C!-- Tea cup --%3E%3Cg transform='translate(790,675)' opacity='0.05'%3E%3Cpath d='M-30,-10 L-25,50 Q-25,60 0,60 Q25,60 25,50 L30,-10 Z' fill='none' stroke='%231a7a4a' stroke-width='3'/%3E%3Cpath d='M30,10 Q50,10 50,25 Q50,40 30,40' fill='none' stroke='%231a7a4a' stroke-width='3'/%3E%3Cline x1='-30' y1='-10' x2='30' y2='-10' stroke='%231a7a4a' stroke-width='2.5'/%3E%3Cpath d='-10,-25 Q-5,-40 0,-25' fill='none' stroke='%231a7a4a' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='10,-28 Q15,-43 20,-28' fill='none' stroke='%231a7a4a' stroke-width='2' stroke-linecap='round'/%3E%3C/g%3E%3C!-- Row 5 --%3E%3C!-- Grapes --%3E%3Cg transform='translate(45,870)' opacity='0.04'%3E%3Ccircle cx='0' cy='0' r='14' fill='none' stroke='%231a7a4a' stroke-width='2.5'/%3E%3Ccircle cx='25' cy='5' r='14' fill='none' stroke='%231a7a4a' stroke-width='2.5'/%3E%3Ccircle cx='-25' cy='5' r='14' fill='none' stroke='%231a7a4a' stroke-width='2.5'/%3E%3Ccircle cx='12' cy='26' r='14' fill='none' stroke='%231a7a4a' stroke-width='2.5'/%3E%3Ccircle cx='-12' cy='26' r='14' fill='none' stroke='%231a7a4a' stroke-width='2.5'/%3E%3Ccircle cx='0' cy='48' r='14' fill='none' stroke='%231a7a4a' stroke-width='2.5'/%3E%3Cpath d='M0,-14 Q10,-35 25,-40' fill='none' stroke='%231a7a4a' stroke-width='2.5' stroke-linecap='round'/%3E%3C/g%3E%3C!-- Soda can --%3E%3Cg transform='translate(210,860)' opacity='0.04'%3E%3Crect x='-22' y='-55' width='44' height='100' rx='5' fill='none' stroke='%231a7a4a' stroke-width='3'/%3E%3Cellipse cx='0' cy='-55' rx='22' ry='8' fill='none' stroke='%231a7a4a' stroke-width='2.5'/%3E%3Cellipse cx='0' cy='45' rx='22' ry='8' fill='none' stroke='%231a7a4a' stroke-width='2.5'/%3E%3Cline x1='5' y1='-63' x2='5' y2='-55' stroke='%231a7a4a' stroke-width='2.5' stroke-linecap='round'/%3E%3Cpath d='M-15,-10 L15,-10 L10,15 L-10,15 Z' fill='none' stroke='%231a7a4a' stroke-width='2'/%3E%3C/g%3E%3C!-- Mushroom --%3E%3Cg transform='translate(380,865)' opacity='0.04'%3E%3Cpath d='M-45,-5 Q-45,-60 0,-60 Q45,-60 45,-5 Z' fill='none' stroke='%231a7a4a' stroke-width='3'/%3E%3Crect x='-18' y='-5' width='36' height='55' rx='5' fill='none' stroke='%231a7a4a' stroke-width='3'/%3E%3Ccircle cx='-18' cy='-30' r='6' fill='%231a7a4a' opacity='0.5'/%3E%3Ccircle cx='18' cy='-20' r='5' fill='%231a7a4a' opacity='0.5'/%3E%3Ccircle cx='0' cy='-45' r='5' fill='%231a7a4a' opacity='0.5'/%3E%3C/g%3E%3C!-- Cookie --%3E%3Cg transform='translate(550,860)' opacity='0.04'%3E%3Ccircle cx='0' cy='0' r='48' fill='none' stroke='%231a7a4a' stroke-width='3'/%3E%3Ccircle cx='-15' cy='-15' r='7' fill='%231a7a4a' opacity='0.5'/%3E%3Ccircle cx='18' cy='-10' r='6' fill='%231a7a4a' opacity='0.5'/%3E%3Ccircle cx='5' cy='20' r='7' fill='%231a7a4a' opacity='0.5'/%3E%3Ccircle cx='-25' cy='15' r='5' fill='%231a7a4a' opacity='0.5'/%3E%3Ccircle cx='30' cy='20' r='5' fill='%231a7a4a' opacity='0.5'/%3E%3C/g%3E%3C!-- Prawns --%3E%3Cg transform='translate(720,865) rotate(-20)' opacity='0.04'%3E%3Cpath d='M0,-60 Q30,-40 35,0 Q30,40 0,55 Q-20,45 -30,20 Q-35,-10 -20,-40 Q-10,-58 0,-60' fill='none' stroke='%231a7a4a' stroke-width='3'/%3E%3Cpath d='M0,-60 Q10,-75 5,-85' fill='none' stroke='%231a7a4a' stroke-width='2.5' stroke-linecap='round'/%3E%3Cpath d='M0,-60 Q-15,-70 -12,-82' fill='none' stroke='%231a7a4a' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M-30,20 Q-50,10 -55,20' fill='none' stroke='%231a7a4a' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M-25,-10 Q-48,-15 -52,-5' fill='none' stroke='%231a7a4a' stroke-width='2' stroke-linecap='round'/%3E%3C/g%3E%3C!-- Pretzel --%3E%3Cg transform='translate(875,865)' opacity='0.04'%3E%3Cpath d='M0,-50 Q40,-50 40,0 Q40,30 20,30 Q0,30 0,10 Q0,-10 20,-10 Q30,-10 30,0 Q30,10 20,10 Q10,10 10,0 Q10,-20 0,-20 Q-30,-20 -30,10 Q-30,40 0,50 Q40,50 40,20' fill='none' stroke='%231a7a4a' stroke-width='3' stroke-linecap='round'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 480px 480px;
+}
+
+/* ===== NAVBAR ===== */
+.fc-nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 28px;
+  background:rgba(255,255,255,0.92);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(0,0,0,0.06);
+  position:sticky;
+  top:0;
+  z-index:100;
+  gap:16px;
+}
+.nav-brand{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+.nav-logo{
+  width:38px;height:38px;
+  background:linear-gradient(135deg,var(--green),var(--green-mid));
+  border-radius:11px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;
+  box-shadow:0 4px 12px var(--green-glow);
+}
+.nav-logo-img{
+  width:38px;height:38px;
+  object-fit:contain;
+  border-radius:10px;
+  display:block;
+}
+.brand-name{
+  font-family:'Playfair Display',serif;
+  font-size:1.35rem;
+  color:var(--green);
+  font-weight:700;
+}
+.nav-search-wrap{
+  position:relative;
+  flex:1;
+  max-width:460px;
+}
+.search-icon{
+  position:absolute;
+  left:14px;top:50%;transform:translateY(-50%);
+  font-size:1rem;pointer-events:none;
+}
+.nav-search{
+  width:100%;
+  padding:10px 16px 10px 42px;
+  border:1.5px solid #e5e7eb;
+  border-radius:50px;
+  font-family:'DM Sans',sans-serif;
+  font-size:0.92rem;
+  background:#f9fafb;
+  outline:none;
+  transition:border 0.2s,box-shadow 0.2s;
+}
+.nav-search:focus{
+  border-color:var(--green-mid);
+  box-shadow:0 0 0 3px var(--green-glow);
+  background:white;
+}
+.nav-actions{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+
+/* ===== BUTTONS ===== */
+.fc-btn{
+  padding:9px 18px;
+  border-radius:50px;
+  font-family:'DM Sans',sans-serif;
+  font-size:0.88rem;
+  font-weight:600;
+  cursor:pointer;
+  border:none;
+  transition:all 0.2s;
+}
+.fc-btn-ghost{
+  background:transparent;
+  border:1.5px solid #d1d5db;
+  color:var(--text);
+}
+.fc-btn-ghost:hover{border-color:var(--green);color:var(--green);}
+.fc-btn-cart{
+  background:linear-gradient(135deg,var(--green),var(--green-mid));
+  color:white;
+  padding:9px 20px;
+  box-shadow:0 4px 12px var(--green-glow);
+  position:relative;
+}
+.fc-btn-cart:hover{transform:translateY(-1px);box-shadow:0 8px 20px var(--green-glow);}
+.cart-badge{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-width:22px;height:22px;
+  background:#ef4444;color:white;
+  border-radius:50px;font-size:0.75rem;font-weight:700;
+  margin-left:6px;padding:0 5px;
+}
+.fc-btn-add{
+  width:100%;
+  padding:13px;
+  background:linear-gradient(135deg,var(--green),var(--green-mid));
+  color:white;
+  border:none;border-radius:var(--radius-sm);
+  font-family:'DM Sans',sans-serif;
+  font-size:0.95rem;font-weight:600;
+  cursor:pointer;
+  box-shadow:0 6px 18px var(--green-glow);
+  transition:all 0.2s;
+  margin-top:12px;
+}
+.fc-btn-add:hover{transform:translateY(-2px);box-shadow:0 10px 28px var(--green-glow);}
+
+/* ===== DROPDOWN ===== */
+.fc-dropdown{
+  border-radius:16px!important;
+  border:none!important;
+  box-shadow:0 12px 40px rgba(0,0,0,0.12)!important;
+  padding:8px!important;
+  min-width:200px;
+}
+.fc-dropdown .dropdown-item{
+  border-radius:10px;padding:10px 14px;
+  font-family:'DM Sans',sans-serif;font-size:0.9rem;
+  transition:background 0.15s;
+}
+.fc-dropdown .dropdown-item:hover{background:var(--green-light);}
+
+/* ===== CAROUSEL ===== */
+.carousel-section{
+  position:relative;
+  overflow:hidden;
+  margin:0;
+  max-height:300px;
+}
+.offer-carousel{
+  display:flex;
+  transition:transform 0.5s cubic-bezier(0.4,0,0.2,1);
+  will-change:transform;
+}
+.offer-slide{
+  min-width:100%;
+  height:290px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:40px 8% 40px 8%;
+  position:relative;
+  overflow:hidden;
+  gap:24px;
+}
+.offer-slide::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to right, rgba(0,0,0,0.35) 0%, transparent 60%);
+}
+.offer-img{
+  position:absolute;right:0;bottom:0;
+  height:100%;width:50%;
+  object-fit:cover;
+  opacity:0.55;
+  border-radius:0;
+}
+.offer-text{
+  position:relative;z-index:2;
+  color:white;
+  max-width:420px;
+}
+.offer-tag{
+  display:inline-block;
+  background:rgba(255,255,255,0.25);
+  border:1px solid rgba(255,255,255,0.4);
+  backdrop-filter:blur(8px);
+  color:white;
+  font-size:0.7rem;font-weight:700;letter-spacing:0.1em;
+  padding:4px 12px;border-radius:50px;
+  margin-bottom:10px;
+}
+.offer-text h3{
+  font-family:'Playfair Display',serif;
+  font-size:2rem;font-weight:700;
+  line-height:1.2;margin-bottom:6px;
+  text-shadow:0 2px 8px rgba(0,0,0,0.3);
+}
+.offer-text p{font-size:0.95rem;opacity:0.9;margin-bottom:16px;}
+.offer-cta{
+  padding:10px 24px;
+  background:white;
+  color:var(--text);
+  border:none;border-radius:50px;
+  font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:700;
+  cursor:pointer;
+  transition:all 0.2s;
+  box-shadow:0 4px 16px rgba(0,0,0,0.2);
+}
+.offer-cta:hover{transform:scale(1.04);}
+/* Dots */
+.carousel-dots{
+  position:absolute;bottom:14px;left:50%;transform:translateX(-50%);
+  display:flex;gap:6px;z-index:10;
+}
+.dot{
+  width:8px;height:8px;border-radius:50%;
+  background:rgba(255,255,255,0.5);border:none;cursor:pointer;
+  transition:all 0.3s;
+}
+.dot.active{width:24px;border-radius:4px;background:white;}
+/* Arrows */
+.carousel-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);
+  background:rgba(255,255,255,0.25);backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,0.4);
+  color:white;font-size:1.6rem;
+  width:44px;height:44px;border-radius:50%;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  z-index:10;transition:background 0.2s;
+}
+.carousel-arrow:hover{background:rgba(255,255,255,0.4);}
+.carousel-arrow.left{left:16px;}
+.carousel-arrow.right{right:16px;}
+
+/* ===== CATEGORY PILLS ===== */
+.cat-pills{
+  display:flex;gap:10px;padding:18px 28px;
+  overflow-x:auto;white-space:nowrap;
+  background:rgba(255,255,255,0.75);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(0,0,0,0.05);
+  position:sticky;
+  top:66px;
+  z-index:90;
+}
+.cat-pills::-webkit-scrollbar{display:none;}
+.cat-pill{
+  padding:9px 22px;
+  background:white;
+  border:1.5px solid #e5e7eb;
+  border-radius:50px;
+  font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:500;
+  cursor:pointer;transition:all 0.22s;
+  white-space:nowrap;
+  text-decoration:none;
+  color:var(--text);
+  display:inline-flex;align-items:center;gap:6px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.04);
+}
+.cat-pill:hover{
+  background:var(--green-light);
+  border-color:var(--green-mid);
+  color:var(--green);
+  transform:translateY(-2px);
+  box-shadow:0 6px 16px var(--green-glow);
+}
+.cat-pill.active{
+  background:var(--green);color:white;border-color:var(--green);
+  box-shadow:0 4px 14px var(--green-glow);
+  transform:translateY(-2px);
+}
+
+/* ===== CONTAINER ===== */
+.fc-container{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 28px 60px;
+}
+
+/* ===== SECTION HEADERS ===== */
+.section-header{
+  display:flex;align-items:center;gap:14px;
+  margin:36px 0 18px;
+  scroll-margin-top:130px;
+}
+.section-icon{
+  font-size:2rem;
+  width:52px;height:52px;
+  background:var(--green-light);
+  border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+}
+.section-title{
+  font-family:'Playfair Display',serif;
+  font-size:1.5rem;color:var(--text);margin:0;
+}
+.section-sub{font-size:0.85rem;color:var(--text-muted);margin-top:2px;}
+
+/* ===== PRODUCT GRID ===== */
+.fc-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(175px,1fr));
+  gap:18px;
+  margin-bottom:10px;
+}
+
+/* ===== PRODUCT CARD ===== */
+.fc-card{
+  background:rgba(255,255,255,0.92);
+  border-radius:var(--radius);
+  padding:14px;
+  cursor:pointer;
+  transition:all 0.3s ease;
+  box-shadow:var(--shadow);
+  border:1.5px solid transparent;
+  position:relative;
+  overflow:hidden;
+  backdrop-filter:blur(8px);
+}
+.fc-card:hover{
+  transform:translateY(-5px);
+  box-shadow:var(--shadow-hover);
+  border-color:var(--green-light);
+  background:white;
+}
+.fc-card .card-img-wrap{
+  background:#f8fdf9;
+  border-radius:12px;
+  height:130px;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:12px;
+  overflow:hidden;
+}
+.fc-card img{
+  width:100%;height:100%;object-fit:contain;
+  transition:transform 0.4s ease;
+  padding:8px;
+}
+.fc-card:hover img{transform:scale(1.08);}
+.card-name{
+  font-weight:600;font-size:0.9rem;
+  color:var(--text);margin-bottom:4px;
+  line-height:1.3;
+}
+.card-price{font-size:1rem;font-weight:700;color:var(--green);}
+.card-quick{
+  position:absolute;bottom:12px;right:12px;
+  width:30px;height:30px;
+  background:var(--green);color:white;
+  border-radius:50%;border:none;
+  font-size:1.1rem;display:flex;align-items:center;justify-content:center;
+  cursor:pointer;
+  opacity:0;transform:scale(0.8);
+  transition:all 0.2s;
+}
+.fc-card:hover .card-quick{opacity:1;transform:scale(1);}
+
+/* ===== MODAL ===== */
+.fc-modal-overlay{
+  display:none;
+  position:fixed;inset:0;
+  background:rgba(0,0,0,0.55);
+  backdrop-filter:blur(4px);
+  z-index:1000;
+  align-items:center;justify-content:center;
+}
+.fc-modal-overlay.open{display:flex;}
+.fc-modal{
+  background:white;
+  border-radius:24px;
+  width:90%;max-width:420px;
+  overflow:hidden;
+  box-shadow:0 32px 80px rgba(0,0,0,0.25);
+  animation:modalPop 0.3s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+@keyframes modalPop{
+  from{opacity:0;transform:scale(0.85);}
+  to{opacity:1;transform:scale(1);}
+}
+.modal-close{
+  position:absolute;top:16px;right:16px;
+  width:34px;height:34px;
+  background:rgba(255,255,255,0.85);
+  border:none;border-radius:50%;
+  font-size:0.9rem;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  color:#374151;z-index:5;
+  box-shadow:0 2px 8px rgba(0,0,0,0.12);
+  transition:background 0.15s;
+}
+.modal-close:hover{background:white;}
+.modal-img-wrap{
+  position:relative;
+  height:190px;
+  background:linear-gradient(135deg,#e8f5e9,#c8e6c9);
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+}
+.modal-img{height:100%;width:100%;object-fit:contain;padding:20px;}
+.modal-body{padding:24px;}
+.modal-cat{
+  font-size:0.72rem;font-weight:600;letter-spacing:0.08em;
+  color:var(--green);text-transform:uppercase;
+  background:var(--green-light);
+  padding:3px 10px;border-radius:50px;
+  display:inline-block;margin-bottom:10px;
+}
+.modal-name{
+  font-family:'Playfair Display',serif;
+  font-size:1.4rem;color:var(--text);margin-bottom:6px;
+}
+.modal-desc{font-size:0.85rem;color:var(--text-muted);line-height:1.6;margin-bottom:16px;}
+.modal-price-row{display:flex;align-items:baseline;gap:6px;margin-bottom:18px;}
+.modal-price{font-size:1.6rem;font-weight:700;color:var(--green);}
+.modal-unit{font-size:0.82rem;color:var(--text-muted);}
+.qty-control{
+  display:flex;align-items:center;justify-content:center;gap:0;
+  background:#f3f4f6;border-radius:50px;padding:4px;
+  width:fit-content;margin:0 auto;
+}
+.qty-btn{
+  width:36px;height:36px;border-radius:50%;border:none;
+  background:white;font-size:1.2rem;font-weight:500;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:background 0.15s;color:var(--text);
+  box-shadow:0 2px 6px rgba(0,0,0,0.08);
+}
+.qty-btn:hover{background:var(--green-light);}
+.qty-val{font-size:1.1rem;font-weight:700;min-width:50px;text-align:center;color:var(--text);}
+
+/* ===== CART PAGE ===== */
+.cart-item{
+  background:white;
+  border-radius:var(--radius-sm);
+  padding:16px 20px;
+  margin-bottom:12px;
+  display:flex;align-items:center;justify-content:space-between;
+  box-shadow:var(--shadow);
+  border-left:4px solid var(--green);
+}
+.cart-item-name{font-weight:600;color:var(--text);font-size:0.95rem;}
+.cart-item-meta{font-size:0.85rem;color:var(--text-muted);margin-top:2px;}
+.cart-item-total{font-weight:700;font-size:1rem;color:var(--green);}
+.cart-summary{
+  background:white;
+  border-radius:var(--radius);
+  padding:24px;
+  margin-top:8px;
+  box-shadow:var(--shadow);
+}
+.summary-row{
+  display:flex;justify-content:space-between;
+  padding:10px 0;
+  border-bottom:1px solid #f3f4f6;
+  font-size:0.95rem;color:var(--text-muted);
+}
+.summary-row.total-row{
+  border-bottom:none;
+  font-size:1.15rem;font-weight:700;color:var(--text);
+  padding-top:14px;
+}
+
+/* ===== TOAST ===== */
+.fc-toast{
+  position:fixed;bottom:24px;right:24px;
+  background:var(--green);color:white;
+  padding:14px 22px;border-radius:14px;
+  display:none;z-index:9999;
+  font-weight:500;font-size:0.9rem;
+  box-shadow:0 8px 24px rgba(0,0,0,0.18);
+  animation:slideToast 0.3s ease;
+}
+@keyframes slideToast{
+  from{transform:translateY(20px);opacity:0;}
+  to{transform:translateY(0);opacity:1;}
+}
