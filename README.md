@@ -1,4 +1,5 @@
 # 🛒 FreshCart – Online Grocery Shopping Website
+Open this link to experience : freshcartgrocery.netlify.app
 
 FreshCart is a modern and user-friendly online grocery shopping platform inspired by Blinkit. It is designed to provide a seamless and interactive shopping experience, allowing users to browse products, add items to the cart, and manage their purchases efficiently.
 
